@@ -20,23 +20,24 @@
     <title>Dev'Coffee PWA</title>
     <script src="https://cdn.jsdelivr.net/npm/modernizr@3.12.0/lib/cli.min.js"></script>
     <script type="text/javascript">
-      // https://modernizr.com
+      var $ios = function iOS() {
+        return [
+          'iPad Simulator',
+          'iPhone Simulator',
+          'iPod Simulator',
+          'iPad',
+          'iPhone',
+          'iPod'
+        ].includes(navigator.platform)
+        // iPad on iOS 13 detection
+        || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+      }
 
-      //Add Modernizr test
-      Modernizr.addTest('isios', function() {
-        return navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
-      });
-
-      //usage
-      if (Modernizr.isios) {
-        //this adds ios class to body
-        Modernizr.prefixed('ios');
+      if ($ios) s
         console.log('ios')
       } else {
-        //this adds notios class to body
-        Modernizr.prefixed('notios');
         console.log('not ios')
-      }      
+      }
     </script>
   </head>
   <body>
