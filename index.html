@@ -19,7 +19,25 @@
     <meta name="theme-color" content="#db4938">
     <title>Dev'Coffee PWA</title>
     <script src="https://cdn.jsdelivr.net/npm/modernizr@3.12.0/lib/cli.min.js"></script>
-    <script src="js/user_agent.js"></script>
+    <script type="text/javascript">
+      // https://modernizr.com
+
+      //Add Modernizr test
+      Modernizr.addTest('isios', function() {
+        return navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
+      });
+
+      //usage
+      if (Modernizr.isios) {
+        //this adds ios class to body
+        Modernizr.prefixed('ios');
+        console.log('ios')
+      } else {
+        //this adds notios class to body
+        Modernizr.prefixed('notios');
+        console.log('not ios')
+      }      
+    </script>
   </head>
   <body>
     <main>
