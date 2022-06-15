@@ -11,6 +11,23 @@ body {
   font-size: 1rem;
 }
 
+header {
+  width: 100%;
+  background-color:indianred;
+  color: #fff;
+  font-weight: bold;
+  padding: 20px 0 20px 0;
+}
+
+header a, header a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
 main {
   max-width: 900px;
   margin: auto;
